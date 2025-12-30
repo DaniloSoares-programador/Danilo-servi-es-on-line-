@@ -1,134 +1,272 @@
+/* ===============================
+   RESET BÁSICO
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
+/* ===============================
+   VARIÁVEIS DE CORES (CLÁSSICAS)
+================================ */
+:root {
+  --azul-escuro: #0a2540;
+  --azul-medio: #1f3b5c;
+  --cinza-claro: #f5f7fa;
+  --cinza-medio: #6b7280;
+  --cinza-escuro: #111827;
+  --branco: #ffffff;
+  --verde-whats: #25d366;
+}
+
+/* ===============================
+   ESTILO GLOBAL
+================================ */
 body {
-  background: #f2f4f8;
-  color: #0b1f33;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===============================
+   CONTAINER PADRÃO
+================================ */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
+/* ===============================
+   HEADER
+================================ */
 header {
-  background: #0b1f33;
-  padding: 15px 0;
+  background-color: var(--azul-escuro);
+  padding: 16px 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  height: 45px;
+  height: 48px;
 }
 
 nav a {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
+  color: var(--branco);
+  margin-left: 24px;
   font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ===============================
+   HERO
+================================ */
 .hero {
-  background: linear-gradient(135deg, #0b1f33, #1f4fd8);
-  color: #fff;
-  padding: 90px 0;
+  background: linear-gradient(
+    135deg,
+    var(--azul-escuro),
+    var(--azul-medio)
+  );
+  color: var(--branco);
+  padding: 100px 0;
   text-align: center;
 }
 
 .hero h1 {
   font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .hero p {
-  margin: 15px 0;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  opacity: 0.95;
 }
 
+/* ===============================
+   BOTÕES
+================================ */
 .btn-whats {
-  background: #25d366;
-  padding: 14px 30px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-  display: inline-block;
-  margin-top: 20px;
+  background-color: var(--verde-whats);
+  color: var(--branco);
+  padding: 14px 28px;
+  border-radius: 6px;
   font-weight: 500;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.btn-whats:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-servico {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-servico:hover {
+  background-color: var(--azul-medio);
+}
+
+/* ===============================
+   SERVIÇOS
+================================ */
 .servicos {
-  padding: 70px 0;
+  padding: 80px 0;
+  background-color: var(--cinza-claro);
 }
 
 .servicos h2 {
   text-align: center;
-  margin-bottom: 50px;
+  font-size: 2rem;
+  margin-bottom: 48px;
+  color: var(--azul-escuro);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
 
 .card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  transition: transform 0.3s;
+  background-color: var(--branco);
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-.btn-servico {
-  display: inline-block;
-  margin-top: 15px;
-  color: #1f4fd8;
-  font-weight: 500;
-  text-decoration: none;
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--azul-escuro);
 }
 
+.card p {
+  font-size: 0.95rem;
+  color: var(--cinza-medio);
+}
+
+/* ===============================
+   CONTATO
+================================ */
 .contato {
-  background: #0b1f33;
-  color: #fff;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 80px 0;
   text-align: center;
-  padding: 70px 0;
 }
 
+.contato h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.contato p {
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+/* ===============================
+   FOOTER
+================================ */
 footer {
-  background: #081827;
-  color: #fff;
+  background-color: #081a2b;
+  color: var(--branco);
   text-align: center;
-  padding: 15px;
+  padding: 24px 0;
+  font-size: 0.85rem;
 }
 
-/* ANIMAÇÕES */
+/* ===============================
+   ANIMAÇÕES CLÁSSICAS
+================================ */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .fade-down {
-  opacity: 0;
-  transform: translateY(-30px);
-  transition: all 0.8s ease;
+  animation: fadeDown 0.8s ease forwards;
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVO (MOBILE)
+================================ */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 12px;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
